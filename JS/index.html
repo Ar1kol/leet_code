@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="demo"></h1>
+
+
+    <script>
+
+        var romanToInt = function (s) {
+            s = s.split("");
+            let sum = 0;
+            for (let i = 0; i < s.length; i++) {
+                if (s[i] === "I") {
+                    if (s[i + 1] === "V" || s[i + 1] === "X") {
+                        sum -= 1;
+                    } else {
+                        sum += 1;
+                    }
+                } else if (s[i] === "V") {
+                    sum += 5;
+                } else if (s[i] === "X") {
+                    if (s[i + 1] === "L" || s[i + 1] === "C") {
+                        sum -= 10;
+                    } else {
+                        sum += 10;
+                    }
+                } else if (s[i] === "L") {
+                    sum += 50;
+                } else if (s[i] === "C") {
+                    if (s[i + 1] === "D" || s[i + 1] === "M") {
+                        sum -= 100;
+                    } else {
+                        sum += 100;
+                    }
+                } else if (s[i] === "D") {
+                    sum += 500;
+                } else {
+                    sum += 1000;
+                }
+            }
+            return document.getElementById("demo").innerHTML = sum;
+        };
+
+        romanToInt("MCMXCIV")
+
+        // console.log(isPalindrome(10))
+        // var twoSum = function (nums, target) {
+        //     let res = [];
+        //     for (let i = 0; i < nums.length; i++) {
+        //         let new_nums = [];
+        //         let num = nums[i];
+        //         console.log(num)
+        //         new_nums = nums.slice(i+1, nums.length);
+        //         console.log(new_nums)
+        //         for (let j = 0; j < new_nums.length; j++) {
+        //             if (new_nums[j] + num === target) {
+        //                 res.push(i, i + j + 1);
+        //                 console.log(res)
+        //                 return document.getElementById("demo").innerHTML = res;
+        //             }
+        //         }
+        //     }
+        // };
+        // twoSum([3, 2, 4], 6)
+    </script>
+</body>
+
+</html>
