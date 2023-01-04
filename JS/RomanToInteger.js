@@ -27,7 +27,7 @@ var romanToInt = function (s) {
     } else if (s[i] === "D") {
       sum += 500;
     } else {
-      sum += 500;
+      sum += 1000;
     }
   }
 };
