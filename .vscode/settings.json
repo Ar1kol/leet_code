@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.html": "html",
+        "*.css": "css",
+        "*.md": "bat",
+        "stdlib.h": "c",
+        "type_traits": "c",
+        "string.h": "c"
+    }
+}
